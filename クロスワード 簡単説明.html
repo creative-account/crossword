@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クロスワード</title>
+  <style>
+    @media print{
+      @page {
+        size: A4 landscape;
+        margin: 15mm;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      table.no-print {
+        display: none;
+      }
+    }
+    body {
+      font-family: "Noto Sans JP";
+      padding: 1rem;
+    }
+
+    table {
+      float: left;
+      border-collapse: collapse;
+      margin: 0;
+      margin-right: 2rem;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
+    
+    td {
+      border: 1px solid #000;
+      box-sizing: border-box;
+      width: 15mm;
+      height: 15mm;
+      margin: 0;
+      padding: 1mm;
+      font-size: 10pt;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1;
+
+      > div {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        
+        > span:not(.text) {
+          position: absolute;
+          background-color: #fff;
+          box-shadow: 0 0 0 2px #fff;
+        }
+
+        span.text {
+          z-index: 100;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 20pt;
+        }
+
+        &:has(.key) {
+          border: 1px solid #000;
+
+          .num {
+            left: calc(-.5mm - 1px);
+            top: calc(-.5mm - 1px);
+          }
+        }
+      }
+      .key {
+        right: -.5mm;
+        bottom: -.5mm;
+      }
+      .num {
+        left: -.5mm;
+        top: -.5mm;
+      }
+
+      &.null {
+        background-color: #000;
+      }
+  }
+
+  li {
+    font-size: 12pt;
+  }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td class="null"></td>
+      <td><div><span class="num">1</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">2</span><span class="key">B</span></div></td>
+      <td><div><span class="num">3</span></div></td>
+      <td></td>
+      <td class="null"></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">4</span></div></td>
+      <td></td>
+      <td></td>
+      <td class="null"></td>
+      <td></td>
+      <td class="null"></td>
+      <td><div><span class="num">5</span></div></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">6</span></div></td>
+      <td></td>
+      <td class="null"></td>
+      <td><div><span class="num">7</span><span class="key">C</span></div></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">8</span></div></td>
+      <td></td>
+      <td><div><span class="num">9</span></div></td>
+      <td></td>
+      <td></td>
+      <td class="null"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">10</span><span  class="key">A</span></div></td>
+      <td></td>
+      <td></td>
+      <td class="null"></td>
+      <td><div><span class="num">11</span></div></td>
+      <td><div><span class="num">12</span></div></td>
+      <td><div><span  class="key">D</span></div></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td class="null"></td>
+      <td><div><span class="num">13</span></div></td>
+      <td><div><span class="num">14</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">15</span></div></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="null"></td>
+      <td><div><span class="num">16</span></div></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="null"></td>
+      <td></td>
+    </tr>
+  </table>
+  <div>
+    <div>
+      <h3>タテのカギ</h3>
+      <ol>
+        <li value="1">歩くのが不自由な人の移動を助ける、車輪つきの椅子。</li>
+        <li value="3">環境に配慮した商品につけられるマーク。</li>
+        <li value="4">弓で弦をこすって演奏する弦楽器。オーケストラの主役。</li>
+        <li value="5">豆を甘く煮て砂糖をまぶしたお菓子。</li>
+        <li value="7">口の中にあって、味を感じたり、ものを食べたり話したりする器官。</li>
+        <li value="9">ラグビーで、両チームの選手が組み合ってボールを奪い合うプレー。</li>
+        <li value="12">頭に角がある、大型の哺乳類。</li>
+        <li value="14">仏像を安置し、僧侶が修行する建物。</li>
+      </ol>
+    </div>
+    <div>
+      <h3>ヨコのカギ</h3>
+      <ol>
+        <li value="2">変態してオタマジャクシからになる両生類。</li>
+        <li value="4">「天空の城ラピュタ」に出てくる、ラピュタを崩壊させる呪文。</li>
+        <li value="6">普段家族が過ごす部屋。</li>
+        <li value="7">白黒の縞模様がある、アフリカの草原に住む動物。</li>
+        <li value="8">牡蠣のこと。</li>
+        <li value="10">危険なこと。</li>
+        <li value="11">群馬県にある温泉地。</li>
+        <li value="13">牛乳で割った飲み物のこと。「カフェ○○」「抹茶○○」</li>
+        <li value="15">考えていること。おもわく。</li>
+        <li value="16">武士のこと</li>
+      </ol>
+    </div>
+  </div>
+  <!-- 解答 この表は印刷されません -->
+  <table class="no-print">
+    <tr>
+      <td class="null"></td>
+      <td><div><span class="num">1</span><span class="text">く</span></span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">2</span><span class="text">か</span><span class="key">B</span></div></td>
+      <td><div><span class="num">3</span><span class="text">え</span></div></td>
+      <td><div><span class="text">る</span></div></td>
+      <td class="null"></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">4</span><span class="text">ば</span></div></td>
+      <td><div><span class="text">る</span></div></td>
+      <td><div><span class="text">す</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="text">こ</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">5</span><span class="text">あ</span></div></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">6</span><span class="text">い</span></div></td>
+      <td><div><span class="text">ま</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">7</span><span class="text">し</span><span class="key">C</span></div></td>
+      <td><div><span class="text">ま</span></div></td>
+      <td><div><span class="text">う</span></div></td>
+      <td><div><span class="text">ま</span></div></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">8</span><span class="text">お</span></div></td>
+      <td><div><span class="text">い</span></div></td>
+      <td><div><span class="num">9</span><span class="text">す</span></div></td>
+      <td><div><span class="text">た</span></div></td>
+      <td><div><span class="text">ー</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="text">な</span></div></td>
+    </tr>
+    <tr>
+      <td><div><span class="num">10</span><span class="text">り</span><span  class="key">A</span></div></td>
+      <td><div><span class="text">す</span></div></td>
+      <td><div><span class="text">く</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">11</span><span class="text">く</span></div></td>
+      <td><div><span class="num">12</span><span class="text">さ</span></div></td>
+      <td><div><span class="text">つ</span><span  class="key">D</span></div></td>
+    </tr>
+    <tr>
+      <td><div><span class="text">ん</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">13</span><span class="text">ら</span></div></td>
+      <td><div><span class="num">14</span><span class="text">て</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="num">15</span><span class="text">い</span></div></td>
+      <td><div><span class="text">と</span></div></td>
+    </tr>
+    <tr>
+      <td class="null"></td>
+      <td><div><span class="num">16</span><span class="text">さ</span></div></td>
+      <td><div><span class="text">む</span></div></td>
+      <td><div><span class="text">ら</span></div></td>
+      <td><div><span class="text">い</span></div></td>
+      <td class="null"></td>
+      <td><div><span class="text">う</span></div></td>
+    </tr>
+  </table>
+</body>
+</html>
